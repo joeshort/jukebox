@@ -205,7 +205,7 @@ class Jukebox():
         self._open_audio()
         print("Playing {} ({})".format(identifier, targets))
         self._play_process = await asyncio.create_subprocess_exec(
-            "/usr/bin/mpg123", '-q', '-C', *targets,
+            "/usr/bin/mpg123", '-q', '-C', '--rva-mix', *targets,
             stdin=master
         )
         await self._play_process.wait()
