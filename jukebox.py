@@ -17,7 +17,7 @@ from key_mapping import decode_key
 # - volume keys?
 
 
-ROOT = os.path.abspath("/mnt/music")
+ROOT = os.path.abspath("/home/pi/music")
 COMMAND_TIMEOUT = 3             # if user doesn't queue, forget numbers after 3s
 YIELD_AUDIO_AFTER = 20
 INDEX_FILENAME = "index.txt"
