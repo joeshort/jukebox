@@ -134,12 +134,14 @@ class Jukebox():
             self._skip()
 
         elif keycode in ['VOL+', 'VOL-']:
-            print("Changing volume")
+            
             plus_or_minus = keycode[-1]
-            subprocess.run([
+            cmds = [
                 "amixer", "set", ALSA_CHANNEL_NAME,
                 "{}%{}".format(VOL_STEP, plus_or_minus)
-            ], capture_output=True)
+            ]
+            print(f'Changing volume with {" ".join(cmds)}')
+            subprocess.run(cmds, capture_output=True)
 
         elif keycode == 'PAUSE' and self._play_process is not None:
             os.write(slave, b's')
