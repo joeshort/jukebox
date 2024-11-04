@@ -134,6 +134,7 @@ class Jukebox():
             self._skip()
 
         elif keycode in ['VOL+', 'VOL-']:
+            print("Changing volume")
             plus_or_minus = keycode[-1]
             subprocess.run([
                 "amixer", "set", ALSA_CHANNEL_NAME,
