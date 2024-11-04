@@ -137,7 +137,9 @@ class Jukebox():
             
             plus_or_minus = keycode[-1]
             cmds = [
-                "amixer", "set", ALSA_CHANNEL_NAME,
+                "amixer",
+                "-D", OUTPUT_DEVICE,
+                "set", ALSA_CHANNEL_NAME,
                 "{}%{}".format(VOL_STEP, plus_or_minus)
             ]
             print(f'Changing volume with {" ".join(cmds)}')
